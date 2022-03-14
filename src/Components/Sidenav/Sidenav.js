@@ -178,7 +178,7 @@ const Sidenav = () => {
         </Offcanvas>
       </>
 
-      <div className="logo-cont2">ST</div>
+      <div className="logo-cont2">CB</div>
     </div>
 
     // </div>

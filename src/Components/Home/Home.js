@@ -48,7 +48,7 @@ const Home = () => {
               />
               <Carousel.Caption>
                 <h3>
-                  Welcome to STylish <br /> Boutique
+                  Welcome to ColorsByTilewa
                 </h3>
                 <p>
                   A boutique store where anything you want is available....{" "}
