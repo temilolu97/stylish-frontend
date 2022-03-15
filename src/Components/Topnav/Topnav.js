@@ -57,12 +57,12 @@ const handleLogout = ()=>{
         <AccountCircleOutlinedIcon/> */}
 
         {/* IF USER IS NOT LOGGED IN SO CONDITIONAL STATEMENT COMES IN HERE */}
-        <Link to="/about" className="me-2" style={{textDecoration:"none" ,color:"orange"}}>About</Link>
-        <Link to="/terms" style={{textDecoration:"none", color:"orange"}}>Terms and Condtions</Link>
+        <Link to="/about" className="me-2" style={{textDecoration:"none" ,color:"white"}}>About</Link>
+        {/* <Link to="/terms" style={{textDecoration:"none", color:"white"}}>Terms and Condtions</Link> */}
         {userDetails ? 
         (
           <div class="dropdown">
-            <a class="btn dropdown-toggle" style={{textDecoration:"none", color:"orange"}} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="btn dropdown-toggle" style={{textDecoration:"none", color:"white"}} href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               {`${userDetails.firstName} ${userDetails.lastName}`}
             </a>
             

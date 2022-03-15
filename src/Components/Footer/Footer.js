@@ -5,6 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import PhoneIcon from '@mui/icons-material/Phone';
 import './Footer.scss';
 import Button from "@mui/material/Button";
+import logo from '../../logo.png'
 
 
 const Footer = () => {
@@ -20,26 +21,22 @@ const Footer = () => {
 
 
         <div className="footer-part2">
-          <Link to="#">About</Link>
-          <Link to="#">Jobs</Link>
-          <Link to="#">Docs</Link>
+          <Link to="/about">About</Link>
         </div>
 
         <div className="hr-footer" > </div>
 
 
         <div className="footer-part3">
-          <Link to="#">Terms and Condition</Link>
-          <Link to="#">Privacy Policy</Link>
-          <Link to="#">Cookie Policy</Link>
+          <img src={logo} height="100"/>
         </div>
             <div className="hr-footer" > </div>
         <div className="footer-part4">
           <h6>Reach us on</h6>
           <a href="mailto:stboutique@gmail.com">enquiry@colorsbytilewa</a>
           <div className="social-cont">
-            <InstagramIcon to="https://instagram.com/colorsbytilewa" />
-            <PhoneIcon/>+44 7464808767
+            <a href="https://instagram.com/colorsbytilewa"><InstagramIcon/></a>
+            <PhoneIcon/><span style={{color:"white"}}>+44 7464808767</span>
           </div>
         </div>
       </div>

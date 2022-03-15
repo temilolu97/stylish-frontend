@@ -80,7 +80,6 @@ const Login = () => {
   return (
     <div className="container-log">
       <div className="top-nav">
-        <div className="logo">ST</div>
         <Link to="/">Home</Link>
         <Link to="/Signup">Join</Link>
       </div>
