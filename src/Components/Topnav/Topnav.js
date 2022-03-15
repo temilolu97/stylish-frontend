@@ -4,6 +4,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from '../../logo.png'
 
 
 
@@ -57,6 +58,8 @@ const handleLogout = ()=>{
         <AccountCircleOutlinedIcon/> */}
 
         {/* IF USER IS NOT LOGGED IN SO CONDITIONAL STATEMENT COMES IN HERE */}
+        <img src={logo} height="40px"/>
+        <Link to="/" className="me-2" style={{textDecoration:"none"}}><span style={{color:"white"}}>Colorsby</span><span style={{color:"orange"}}>Tilewa</span></Link>
         <Link to="/about" className="me-2" style={{textDecoration:"none" ,color:"white"}}>About</Link>
         {/* <Link to="/terms" style={{textDecoration:"none", color:"white"}}>Terms and Condtions</Link> */}
         {userDetails ? 
