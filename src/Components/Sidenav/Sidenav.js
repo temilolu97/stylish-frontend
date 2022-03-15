@@ -87,22 +87,13 @@ const Sidenav = () => {
             <ShoppingCartOutlinedIcon />({cart.length})
           </Button>
         </Link>
-        <Button variant="primary" onClick={handleShow}>
-          <StoreMallDirectoryOutlinedIcon />
-        </Button>
-
-        <Button variant="primary" onClick={handleShow}>
-          <CategoryOutlinedIcon />
-        </Button>
+        
       </div>
 
       <>
         <Offcanvas show={show} onHide={handleClose}>
           <Offcanvas.Header closeButton>
-            <Offcanvas.Title>
-              {" "}
-              <div className="logo-cont">ST</div>
-            </Offcanvas.Title>
+            
           </Offcanvas.Header>
           <Offcanvas.Body>
             <List
@@ -129,56 +120,10 @@ const Sidenav = () => {
                 <ListItemText primary={`Cart(${cart.length})`} />
               </ListItemButton>
 
-              <ListItemButton onClick={(e) => gotoStore()} >
-                <ListItemIcon>
-                  <StoreMallDirectoryOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Store" />
-              </ListItemButton>
-              <ListItemButton onClick={handleClick}>
-                <ListItemIcon>
-                  <CategoryOutlinedIcon />
-                </ListItemIcon>
-                <ListItemText primary="Categories" />
-                {open ? <ExpandLess /> : <ExpandMore />}
-              </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit >
-                <List component="div" disablePadding >
-                  <ListItemButton sx={{ pl: 4 }} onClick={(e) => gotoStore()} >
-                    <ListItemIcon>
-                      <CheckroomOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Clothes" />
-                  </ListItemButton>
-
-                  <ListItemButton sx={{ pl: 4 }} onClick={(e) => gotoStoreGlasses()} >
-                    <ListItemIcon>
-                      <StoreMallDirectoryOutlinedIcon  />
-                    </ListItemIcon>
-                    <ListItemText primary="Glasses" />
-                  </ListItemButton>
-
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemIcon>
-                      <StoreMallDirectoryOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Bags" />
-                  </ListItemButton>
-
-                  <ListItemButton sx={{ pl: 4 }}>
-                    <ListItemIcon>
-                      <StoreMallDirectoryOutlinedIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Shoes" />
-                  </ListItemButton>
-                </List>
-              </Collapse>
             </List>
           </Offcanvas.Body>
         </Offcanvas>
       </>
-
-      <div className="logo-cont2">CB</div>
     </div>
 
     // </div>

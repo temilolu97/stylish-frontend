@@ -8,11 +8,11 @@ import SingleProduct from "./Components/Product/SingleProduct";
 import Cart from "./Components/Cart/Cart";
 import AdminLogin from "./Components/Admin/AdminLogin/AdminLogin";
 import AdminProducts from "./Components/Admin/AdminProducts/AdminProducts";
-import Stores from "./Components/Stores/Stores";
 import { useState } from "react";
 import AllCategories from "./Components/Admin/Categories/AllCategories";
 import ProtectedRoutes from "./Components/ProtectedRoutes";
 import About from "./Components/About/About";
+import SearchResult from "./Components/SearchResult/SearchResult";
 
 function App() {
   const [products, setProducts] = useState([])
@@ -33,8 +33,8 @@ function App() {
           <Route path="/admin/login" element={<AdminLogin />} exact />
           <Route path="/Login" element={<Login />} exact />
           <Route path="/Signup" element={<Signup />} exact />
-          <Route path="/store" element={<Stores />} exact />
           <Route path="/about" element={<About/>}/>
+          <Route path="/result" element={<SearchResult/>}/>
 
           <Route element={<ProtectedRoutes/>}>
             <Route path="/admin/products" element={<AdminProducts />} exact />

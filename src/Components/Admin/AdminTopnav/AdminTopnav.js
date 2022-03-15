@@ -25,7 +25,7 @@ const AdminTopnav = () => {
   const [productName, setproductName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
-  const [categoryId,setCategoryId] = useState(1);
+  const [featured,setFeatured] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(async()=>{
@@ -50,7 +50,7 @@ const AdminTopnav = () => {
     formData.append("description",description);
     formData.append("price",price);
     formData.append("imageFile", selectedImage);
-    formData.append("categoryId",categoryId)
+    formData.append("featured",featured)
 
     const response =axios.post('https://localhost:44381/api/Products',formData,{
         headers:{
@@ -65,8 +65,8 @@ const AdminTopnav = () => {
     <div>
       <Navbar  expand="lg" bg="dark" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#">
-            <div className="logo-cont-a">ST</div>
+          <Navbar.Brand href="/">
+          <span>ColorsBy</span><span style={{color:"orange"}}>Tilewa</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
@@ -75,9 +75,8 @@ const AdminTopnav = () => {
               // style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/">Home</Nav.Link>
+              
               <Nav.Link href="/admin/products">Products</Nav.Link>
-              <Nav.Link href="/admin/categories">Categories</Nav.Link>
               <Nav.Link onClick={handleShow} href="#action2">Add Products</Nav.Link>
 
             </Nav>
@@ -109,12 +108,12 @@ const AdminTopnav = () => {
             <div><label>Product Description</label>
             <input className='form-control' type="text" value={description} onChange={(e)=>{setDescription(e.target.value)}} required/>
             </div>
-            <div><label>Category</label>
-            <select className='form-control' value={categoryId} onChange={(e)=>{setCategoryId(e.target.value)}}>
+            <div><label>FeaturedImage</label>
+            <select className='form-control' value={featured} onChange={(e)=>{setFeatured(e.target.value)}}>
                 <option >Please pick an option</option>
-                {categories.map((category,index)=>(
-                    <option key={index} value={category.id}>{category.name} </option>
-                ))}
+                  <option  value={true}>Yes </option>
+                  <option value={false}>No</option>
+               
             </select>
             </div>
              <div><label>Price</label>

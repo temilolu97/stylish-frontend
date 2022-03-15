@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.scss";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
@@ -17,10 +17,15 @@ import StoreItems from "./StoreItems";
 import Topnav from "../Topnav/Topnav";
 import Sidenav from "../Sidenav/Sidenav";
 import Footer from "../Footer/Footer";
+import axios from "axios";
 
 const Home = () => {
   const [index, setIndex] = useState(0);
-
+  const [featuredProducts, setFeaturedProducts] = useState([])
+    useEffect(async()=>{
+        const response = await axios.get("https://localhost:44381/api/Products/featured-products");
+        setFeaturedProducts(response.data)
+    },[featuredProducts])
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
@@ -40,50 +45,18 @@ const Home = () => {
     <Topnav />
         <div className="caro-cont">
           <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>
-                  Welcome to ColorsByTilewa
-                </h3>
-                <p>
-                  A boutique store where anything you want is available....{" "}
-                </p>
-                <Link to="/about">
-                  <Button
-                    variant="contained"
-                    sx={{ marginTop: "30px" }}
-                  >
-                    Get Started
-                  </Button>
-                </Link>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://images.unsplash.com/photo-1627384113743-6bd5a479fffd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                alt="Second slide"
-              />
-              <Carousel.Caption>
-                <h4>Never </h4>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                alt="Third slide"
-              />
-            </Carousel.Item>
+            {featuredProducts.map((item,index)=>(
+                            <Carousel.Item>
+                            <img
+                              className="d-block w-100"
+                              src={item.imageUrl}
+                              alt="Second slide"
+                            />
+                          </Carousel.Item>
+            ))}
           </Carousel>
         </div>
-
-        <StoreItems />
+        <StoreItems/>
         <Footer/>
       </div>
       </div>

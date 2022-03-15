@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Home.scss";
 import { useParams, useNavigate } from "react-router-dom";
 
-// MATERIAL UI IMPORTS
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+
 import axios from "axios";
 import ProductItem from "./ProductItem";
+import { cartContext } from "../../Context/CartProvider";
 
 const StoreItems = () => {
   const [index, setIndex] = useState(0);
   const [products, setProducts] = useState([])
   const [categories, setCategories] = useState([])
-
+  const [cart, setCart] = useContext(cartContext)
  
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -36,38 +31,49 @@ const StoreItems = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // ITEMS
+ 
+  const AddToCart =(product)=>{
+    console.log(product)
+      const{id} = product
+      const exist = cart.findIndex(x=> x.id === id);
+      console.log(exist)
+      if(exist!==-1){
+          cart[exist].qty++
+          console.log(cart)
+      }
+      else{
+          setCart([...cart,{...product, qty:1}])
+      }
+      
+  }
 
   
-  useEffect(async()=>{
-    const response = await axios.get('https://localhost:44381/api/Products');
-    setProducts(response.data)
-    const categoriesResp = await axios.get("https://localhost:44381/api/Categories");
-        setCategories(categoriesResp.data)
-  },[products])
-  if(products.length == 0){
-    return(
-      <div className="text-center">
-        <p>No products in the database currently</p>
-      </div>
-    )
-  }else{
+  
 
   return (
-    <section style={{backgroundColor:"#fff"}}>
-    {categories.map((category,index)=>(
-        <div className="container py-5">
-            <h3 >{category.name}</h3>
-            <hr/>
-            <div className="row">
-                {products.filter((product)=>category.id === product.categoryId).map(product=>(
-                    <ProductItem product={product} category={category.name} />
-                ))}
-            </div>
-        </div>
-    ))}
+    <section className="container-fluid mt-4" style={{backgroundColor:"#fff"}}>
+      <h3 className="text-center">Our Dresses</h3>
+      <div className="row">
+        {products.map((item,index)=>(
+           <div key={index} class="col-12 col-sm-8 col-md-6 col-lg-3">
+           <div class="card">
+             <img class="card-img" src={item.imageUrl} alt="Vans"/>
+             
+             <div class="card-body">
+               <h4 class="card-title" style={{color:"orange"}}>{item.name}</h4>
+               <h6 class="card-subtitle mb-2 text-muted">{item.description}</h6>
+               <div class=" d-flex justify-content-between align-items-center">
+                 <div class="price "><h5 class="mt-4">£{item.price}</h5></div>
+                 <button type="button" onClick={()=>{AddToCart(item)}} class="btn btn-outline-primary">Add To Cart</button>
+               </div>
+             </div>
+           </div>
+         </div>
+        ))}
+        
+      </div>
 </section>
-  );}
+  )
 };
 
 export default StoreItems;

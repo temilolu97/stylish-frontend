@@ -6,109 +6,66 @@ import Topnav from '../Topnav/Topnav'
 
 const About = () => {
   return (
-      <div style={{backgroundColor:"#eee"}}>
+      <div style={{backgroundColor:"#eee"}} >
        <div className='home-whole-cont'>
            <Sidenav/>
            <Topnav/>
-           <div className='container mt-4 text-center'>
-            <h3 style={{marginTop:"80px"}}>About Us</h3>
-            <h5>In a nutshell -</h5>
-            <p>We offer a wide range of quality and affordable items</p>
-            <p>Over 1000 monthly visitors to our website </p>
-            <p>
-            We serve a retail customer base that continues to grow exponentially, 
-            offering products that span various fashion items.
-            </p>
-            <p>
-            We are customer-centric and are committed towards finding creative ways of improving our customers' shopping experience with us. For any questions kindly send us an email at admin@stylishboutique.com.
-            </p>
-            <p></p>
-           </div>
+           
        </div>
 
-       <section class="container mb-4">
-
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
-   
-    <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-        a matter of hours to help you.</p>
-
-    <div class="row">
-
-       
-        <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form"  method="POST">
-
-                <div class="row">
-
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control"/>
-                            <label for="name" class="">Your name</label>
-                        </div>
-                    </div>
-                   
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control"/>
-                            <label for="email" class="">Your email</label>
-                        </div>
-                    </div>
-                    
-
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control"/>
-                            <label for="subject" class="">Subject</label>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="row">
-
-                  
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            <label for="message">Your message</label>
-                        </div>
-
+       <div class="container vh-100 align-items-center">
+	
+	<div class="row input-container" style={{marginTop:"100px"}}>
+        <div className='col-lg-6 col-md-6 col-sm-12 text-center'>
+            <h4>About <span>ColorsBy</span><span style={{color:"orange"}}>Tilewa</span></h4>
+            <p>
+            Colors by Tilewa is a fashion brand that caters for bespoke bridals. We are keen about detailed stitching, neat finishing and proper fit.  At Colors by Tilewa, we pay more attention to the little fit details and we use multiple fittings during the construction process, we also produce with high quality of construction to give perfect fit. 
+What you see is what you get from us.
+            </p>
+        </div>
+        <div className='col-lg-6 col-md-6 col-sm-12 mb-2'>
+        <div class="card mt-2 mx-auto p-4 bg-light">
+                <div class="card-body bg-light">
+                    <div class="container">
+                        <form id="contact-form" role="form">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_name">Firstname *</label> <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required."/> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_lastname">Lastname *</label> <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required."/> </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_email">Email *</label> <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required."/> </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group"> <label for="form_need">Please specify your need *</label> <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                                                <option value="" selected disabled>--Select Your Issue--</option>
+                                                <option>Request Invoice for order</option>
+                                                <option>Request order status</option>
+                                                <option>Haven't received cashback yet</option>
+                                                <option>Other</option>
+                                            </select> </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group"> <label for="form_message">Message *</label> <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea> </div>
+                                    </div>
+                                    <div class="col-md-12"> <input type="submit" class="btn btn-warning btn-send pt-2 btn-block mt-1 " value="Send Message"/> </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                
-
-            </form>
-
-            <div class="text-center text-md-left">
-                <a class="btn btn-info" >Send</a>
             </div>
-            <div class="status"></div>
         </div>
-       
-        <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p>San Francisco, CA 94126, USA</p>
-                </li>
-
-                <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p>+ 01 234 567 89</p>
-                </li>
-
-                <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p>admin@stylishboutique.com</p>
-                </li>
-            </ul>
-        </div>
-     
-
-    </div>
-
-</section>
+			
+	</div>
+</div>
     <Footer/>
        </div>
   )

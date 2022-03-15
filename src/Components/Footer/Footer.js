@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import StoreMallDirectoryOutlinedIcon from "@mui/icons-material/StoreMallDirectoryOutlined";
+import InstagramIcon from '@mui/icons-material/Instagram';
+import PhoneIcon from '@mui/icons-material/Phone';
 import './Footer.scss';
 import Button from "@mui/material/Button";
 
@@ -10,9 +12,8 @@ const Footer = () => {
     <div className="footer-whole-cont">
       <div className="footer-cont">
         <div className="footer-part1">
-          <div className="logo">ST</div>
-          <p>Never get out of style and be the best you can</p>
-          <Button variant="contained">Get Started</Button>
+          <p><span>ColorsBy</span><span style={{color:"orange"}}>Tilewa</span></p>
+          
         </div>
 
         <div className="hr-footer" > </div>
@@ -34,13 +35,11 @@ const Footer = () => {
         </div>
             <div className="hr-footer" > </div>
         <div className="footer-part4">
-          <h6>Let's Chat!</h6>
-          <a href="mailto:stboutique@gmail.com">stboutique@gmail.com</a>
+          <h6>Reach us on</h6>
+          <a href="mailto:stboutique@gmail.com">enquiry@colorsbytilewa</a>
           <div className="social-cont">
-            <StoreMallDirectoryOutlinedIcon />
-            <StoreMallDirectoryOutlinedIcon />
-            <StoreMallDirectoryOutlinedIcon />
-            <StoreMallDirectoryOutlinedIcon />
+            <InstagramIcon to="https://instagram.com/colorsbytilewa" />
+            <PhoneIcon/>+44 7464808767
           </div>
         </div>
       </div>
