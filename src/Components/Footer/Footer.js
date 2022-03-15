@@ -14,7 +14,7 @@ const Footer = () => {
     <div className="footer-whole-cont">
       <div className="footer-cont">
         <div className="footer-part1">
-          <img src={logo} height="100"/>
+          <img src={logo} height="160"/>
         </div>
 
         <div className="hr-footer" > </div>
@@ -24,10 +24,7 @@ const Footer = () => {
           <div>
             <BusinessIcon/><span className="ms-2" style={{color:"white"}}>Address</span>
             <div style={{color:"white"}}>
-              <p>Flat 4, St James Chambers,</p>
-              <p>St James Street,</p>
-              <p>Derby</p>
-              <p>DE1 1QZ</p>
+              <p>Flat 4, St James Chambers,St James Street,Derby ,DE1 1QZ</p>
             </div>
           </div>
         </div>
@@ -35,9 +32,9 @@ const Footer = () => {
         <div className="hr-footer" > </div>
 
 
-        <div className="footer-part3">
+        {/* <div className="footer-part3">
           <p><span style={{color:"white"}}>ColorsBy</span><span style={{color:"orange"}}>Tilewa</span></p>
-        </div>
+        </div> */}
             <div className="hr-footer" > </div>
         <div className="footer-part4">
           <h6>Reach us on</h6>
