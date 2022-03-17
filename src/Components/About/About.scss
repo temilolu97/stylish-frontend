@@ -1,0 +1,39 @@
+@media (max-width: 620px) {
+    .bg-image {
+        display: flex !important;
+        flex-direction: column !important;
+
+        video {
+            width: 100% !important;
+            // height: 50vh;
+        }
+        p {
+            // z-index: 1000 !important;
+            position: absolute;
+            bottom: 5%;
+            padding: 5px 5%;
+            background-color: rgba(0, 0, 0, 0.425);
+            color: white;
+            width: 95% !important;
+            overflow-x: hidden;
+            font-family:  " Alata";
+        }
+    }
+
+
+
+}
+
+@media (max-width: 534px) {
+
+    .about-container {
+
+        margin-left: 0px !important;
+    }
+}
+
+
+// .video-display {
+//     background: url(../../tilewa.mp4);
+//     width: 100%;
+// }

@@ -29,7 +29,6 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="hr-footer" > </div>
 
 
         {/* <div className="footer-part3">

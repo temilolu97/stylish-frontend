@@ -41,8 +41,10 @@ const Home = () => {
     <div className="home-whole-cont">
 
         <Sidenav/>
-      <div className="home-cont">
     <Topnav />
+        </div>
+
+      <div className="home-cont">
         <div className="caro-cont">
           <Carousel activeIndex={index} onSelect={handleSelect}>
             {featuredProducts.map((item,index)=>(
@@ -58,7 +60,6 @@ const Home = () => {
         </div>
         <StoreItems/>
         <Footer/>
-      </div>
       </div>
 
     </>

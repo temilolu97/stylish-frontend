@@ -16,7 +16,7 @@ const SingleProduct = () => {
 
     useEffect(async() => {
         window.scrollTo(0, 0);
-        const response = await axios.get(`https://localhost:44381/api/Products/${params.productId}`)
+        const response = await axios.get(`https://localhost:44381/api/Products/${params.id}`)
         setProductDetails(response.data)
         console.log(productDetails)
     }, [])

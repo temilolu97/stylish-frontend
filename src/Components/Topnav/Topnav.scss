@@ -12,7 +12,7 @@ $log-sign : #182030 ;
     z-index: 100;
     background-color: transparent;
     backdrop-filter: blur(500px);
-    width: 96%;
+    width: 100%;
     // background-image: url(https://images.unsplash.com/photo-1618022325802-7e5e732d97a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmxhY2t8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
     // opacity: 5;
     background-color: rgba(255, 255, 255, 0.37);
@@ -21,6 +21,9 @@ $log-sign : #182030 ;
     align-items: center;
     // border: 2px solid red;
     margin-bottom: 50px;
+}
+.btn-close {
+    background-color: white;
 }
 
 // @media (max-width: 534px)

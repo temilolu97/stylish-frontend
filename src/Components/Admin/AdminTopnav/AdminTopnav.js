@@ -22,6 +22,7 @@ const AdminTopnav = () => {
 
   const [show, setShow] = useState(false);
   const [categories, setCategories]=useState([])
+  const [category, setCategory] = useState("")
   const [productName, setproductName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
@@ -51,6 +52,7 @@ const AdminTopnav = () => {
     formData.append("price",price);
     formData.append("imageFile", selectedImage);
     formData.append("featured",featured)
+    formData.append("category", category)
 
     const response =axios.post('https://localhost:44381/api/Products',formData,{
         headers:{
@@ -78,6 +80,7 @@ const AdminTopnav = () => {
               
               <Nav.Link href="/admin/products">Products</Nav.Link>
               <Nav.Link onClick={handleShow} href="#action2">Add Products</Nav.Link>
+              <Nav.Link href="/admin/categories">Categories</Nav.Link>
 
             </Nav>
             <Form className="d-flex">
@@ -115,6 +118,17 @@ const AdminTopnav = () => {
                   <option value={false}>No</option>
                
             </select>
+            
+            </div>
+            <div><label>Categories</label>
+            <select className='form-control' value={category} onChange={(e)=>{setCategory(e.target.value)}}>
+                <option >Please pick an option</option>
+                {categories.map((item,index)=>(
+                   <option  value={item.name}>{item.name} </option>
+                ))}
+               
+            </select>
+            
             </div>
              <div><label>Price</label>
             <input className='form-control' type="text" value={price} onChange={(e)=>{setPrice(e.target.value)}} required/>

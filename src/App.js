@@ -35,11 +35,12 @@ function App() {
           <Route path="/Signup" element={<Signup />} exact />
           <Route path="/about" element={<About/>}/>
           <Route path="/result" element={<SearchResult/>}/>
+          <Route path="/products/:id" element={<SingleProduct />} exact />
 
           <Route element={<ProtectedRoutes/>}>
             <Route path="/admin/products" element={<AdminProducts />} exact />
 
-            <Route path="/products/:category/:productId" element={<SingleProduct />} exact />
+           
             <Route path="/cart" element={<Cart />} exact />
             
             <Route path="/admin/categories" element={<AllCategories/>}/>

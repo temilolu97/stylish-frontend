@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Home.scss";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 
 
 import axios from "axios";
@@ -60,7 +60,8 @@ const StoreItems = () => {
              <img class="card-img" src={item.imageUrl} alt="Vans"/>
              
              <div class="card-body">
-               <h4 class="card-title" style={{color:"orange"}}>{item.name}</h4>
+              <Link to={`/products/${item.id}`} style={{textDecoration:"none"}}><h4 class="card-title " style={{ color:"orange"}}>{item.name}</h4></Link>
+              {item.category ?(<div className="mt-0"><em style={{fontSize:"0.8rem", textDecoration:"italicise"}}>{item.category}</em></div>):(<span></span>)}
                <h6 class="card-subtitle mb-2 text-muted">{item.description}</h6>
                <div class=" d-flex justify-content-between align-items-center">
                  <div class="price "><h5 class="mt-4">£{item.price}</h5></div>
